@@ -1,5 +1,9 @@
 #include "gestor_tareas.hpp"
 #include <iostream>
+using namespace std;
+
+// Función: Punto de entrada del programa. Aquí es donde comienza la ejecución.
+// Qué hace: Normalmente crea instancias de clases como GestorTareas y gestiona la lógica del menú o flujo de la aplicación.
 
 int main()
 {
@@ -9,26 +13,26 @@ int main()
     int opcion;
     do
     {
-        std::cout << "\n--- GESTOR DE TAREAS ---\n";
-        std::cout << "1. Agregar tarea\n";
-        std::cout << "2. Ver tareas\n";
-        std::cout << "3. Guardar y salir\n";
-        std::cout << "Opción: ";
-        std::cin >> opcion;
-        std::cin.ignore(); // limpiar buffer
+        cout << "\n--- GESTOR DE TAREAS ---\n";
+        cout << "1. Agregar tarea\n";
+        cout << "2. Ver tareas\n";
+        cout << "3. Guardar y salir\n";
+        cout << "Opción: ";
+        cin >> opcion;
+        cin.ignore(); // limpiar buffer
 
         if (opcion == 1)
         {
-            std::string desc, fecha;
+            string desc, fecha;
             int prio;
 
-            std::cout << "Descripción: ";
-            getline(std::cin, desc);
-            std::cout << "Prioridad (1-5): ";
-            std::cin >> prio;
-            std::cin.ignore();
-            std::cout << "Fecha límite (YYYY-MM-DD): ";
-            getline(std::cin, fecha);
+            cout << "Descripción: ";
+            getline(cin, desc);
+            cout << "Prioridad (1-5): ";
+            cin >> prio;
+            cin.ignore();
+            cout << "Fecha límite (YYYY-MM-DD): ";
+            getline(cin, fecha);
 
             Tarea nueva(desc, prio, fecha);
             gestor.agregarTarea(nueva);
@@ -41,7 +45,7 @@ int main()
     } while (opcion != 3);
 
     gestor.guardarEnArchivo("data/tareas.txt");
-    std::cout << "Tareas guardadas. ¡Hasta pronto!\n";
+    cout << "Tareas guardadas. ¡Hasta pronto!\n";
 
     return 0;
 }

@@ -37,9 +37,32 @@ Este es un proyecto en C++ que implementa un **gestor de tareas**, permitiendo a
 
 ## ▶️ Cómo compilar y ejecutar
 
-Este proyecto está escrito en C++ y puedes compilarlo con **g++** desde la terminal:
+Este proyecto está escrito en C++ y puedes compilarlo de dos formas:
 
-```bash
+# Opción 1: Compilación Manual:
+
+Compila desde la terminal usando g++:
+
 g++ gestor_tareas.cpp -o gestor
 ./gestor
-```
+
+# Opción 2: Usando Makefile (recomendado)
+
+Este proyecto está escrito en C++ y utiliza un archivo Makefile para automatizar el proceso de compilación y ejecución.
+
+✅ Requisitos
+Compilador g++ (C++17 o superior)
+Terminal compatible con comandos make
+
+🚀 Compilación y ejecución con Makefile
+Para compilar el proyecto y generar el ejecutable:
+make
+
+Para compilar y ejecutar el programa en un solo paso:
+make run
+
+Esto compilará todos los archivos fuente del directorio src/, generará los archivos objeto en obj/ y creará el ejecutable gestor_tareas.
+
+🧹 Limpiar archivos generados
+Si deseas eliminar los archivos .o y el ejecutable para empezar desde cero, puedes ejecutar:
+make clean
